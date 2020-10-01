@@ -22,6 +22,11 @@ public class MyUserService implements IMyUserService, UserDetailsService {
         return (List<MyUser>) myUserRepository.findAll();
     }
 
+    @Override
+    public MyUser save(MyUser myUser) {
+        return myUserRepository.save(myUser);
+    }
+
 
     @Override
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {

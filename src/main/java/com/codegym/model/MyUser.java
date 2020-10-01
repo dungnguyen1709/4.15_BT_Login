@@ -1,13 +1,13 @@
 package com.codegym.model;
 
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.ManyToOne;
-import java.util.List;
+import javax.persistence.*;
+
 
 @Entity
 public class MyUser {
-    @Id private Long id;
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    private Long id;
     private String username;
     private String password;
 

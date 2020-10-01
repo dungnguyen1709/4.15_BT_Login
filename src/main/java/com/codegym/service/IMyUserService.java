@@ -8,4 +8,6 @@ public interface IMyUserService {
 
     List<MyUser> getUserList();
 
+    MyUser save(MyUser myUser);
+
 }
