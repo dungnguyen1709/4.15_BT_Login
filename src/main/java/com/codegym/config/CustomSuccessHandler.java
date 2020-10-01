@@ -47,9 +47,8 @@ public class CustomSuccessHandler extends SimpleUrlAuthenticationSuccessHandler 
             roles.add(a.getAuthority());
         }
 
-        if (isDba(roles)) {
-            url = "/dba";
-        } else if (isAdmin(roles)) {
+
+        if (isAdmin(roles)) {
             url = "/admin";
         } else if (isUser(roles)) {
             url = "/user";
@@ -74,12 +73,6 @@ public class CustomSuccessHandler extends SimpleUrlAuthenticationSuccessHandler 
         return false;
     }
 
-    private boolean isDba(List<String> roles) {
-        if (roles.contains("ROLE_DBA")) {
-            return true;
-        }
-        return false;
-    }
 
     public void setRedirectStrategy(RedirectStrategy redirectStrategy) {
         this.redirectStrategy = redirectStrategy;
